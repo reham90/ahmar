@@ -12,15 +12,16 @@ $(document).ready(function () {
   if ($(window).width() <= 991) {
     $("#menu-id").click(function (e) {
       e.preventDefault();
-
+      $(".menu-bars .bar").toggleClass("hide");
+      $(".menu-bars .times").toggleClass("hide");
       $(".navgition").toggleClass("reset-left");
       $("body").toggleClass("overflow");
       $(".menu-bars").toggleClass("open-bars");
     });
     $(".nav-head .close-btn").click(function () {
       $(".navgition").removeClass("reset-left");
-      $(".menu-bars .bars").toggleClass("open-bars");
-      $(".menu-bars .bars").toggleClass("close-bars");
+      
+      $(".menu-bars .times").toggleClass("hide");
       $("body").removeClass("overflow");
     });
   
@@ -163,7 +164,7 @@ $(document).ready(function () {
   },
   breakpoints: {
     0: {
-      slidesPerView: 2,
+      slidesPerView: 3,
       spaceBetween: 10,
     },
     767: {
@@ -195,7 +196,7 @@ var screen = new Swiper(".products .swiper-container", {
   },
   breakpoints: {
     0: {
-      slidesPerView: 1,
+      slidesPerView: 2,
       spaceBetween: 15,
     },
     767: {
@@ -229,7 +230,7 @@ var screen = new Swiper(".arrivals .swiper-container", {
   },
   breakpoints: {
     0: {
-      slidesPerView: 1,
+      slidesPerView: 2,
       spaceBetween: 15,
     },
     767: {
@@ -262,7 +263,7 @@ var screen = new Swiper(".sellers .swiper-container", {
   },
   breakpoints: {
     0: {
-      slidesPerView: 1,
+      slidesPerView: 2,
       spaceBetween: 15,
     },
     767: {

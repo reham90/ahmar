@@ -372,7 +372,7 @@ margin-inline-end: 20px;
   width: max-content;
   min-width: 100%;
   max-width: 100%;
-  background-color: var(--main-color);
+  background-color: var(--white-color);
   color: var(--sec-color);
   display: flex;
   justify-content: space-between;
@@ -402,7 +402,7 @@ margin-inline-end: 20px;
   transition: 0.5s;
 }
 .cats-dispaly .cat-li a {
-  color: #fff;
+  color: var(--main-color);
   text-decoration: none;
   line-height: 18px;
   display: block;
@@ -600,7 +600,19 @@ margin-inline-end: 20px;
   transition: all 0.3s ease-in-out;
 }
 
-
+.fixed-logo {
+  display: none;
+}
+.fixed-nav .fixed-logo {
+  display: flex;
+  align-items: center;
+}
+.fixed-nav .img-logo {
+  display: none;
+}
+.logo-sm img {
+  max-width: 90px;
+}
 
 .search-input:focus {
   outline: none;
@@ -657,7 +669,7 @@ html[dir="rtl"] .open-search {
 }
 
 .cart-list li button i{
-  color: var(--main-color);
+  color: var(--main-color) ;
 }
 
 .close-search::after {
@@ -713,9 +725,7 @@ html[dir="rtl"] .open-search {
   font-size: 24px;
   transition: 0.5s;
 }
-html[dir="ltr"] .cart-list li button i{
-  transform: scaleX(-1);
-}
+
 .cart-list li button i:hover{
   color: var(--main-hover);
 }
@@ -804,7 +814,7 @@ html[dir="ltr"] .cart-list li button i{
 /*           swiper section                     */
 .main-slider {
   position: relative;
-  overflow: hidden;
+ 
  
 }
 .main{
@@ -873,10 +883,10 @@ html[dir="ltr"] .cart-list li button i{
   color: var(--white-color);
 }
 .main-slider .swiper-btn.swiper-btn-next {
-  left: 138px !important;
+  left: -57px !important;
 }
 .main-slider .swiper-btn.swiper-btn-prev {
-  right: 138px !important;
+  right: -57px !important;
 }
 
 .main-slider .swiper-pagination {
@@ -1132,7 +1142,7 @@ border-color: var(--main-hover);
   transition: 0.5s;
 }
 .title-div a:hover{
-color: var(--main-hover);
+color: var(--white-color);
 }
 .products {
   text-align: center;
@@ -1408,10 +1418,12 @@ color: var(--main-hover);
 .features{
   background-color: var(--main-color);
   padding: 40px 0;
+  margin-top: 45px;
 }
 .features-blocks{
   display: flex;
   justify-content: space-between;
+
 }
 .feature-block{
   display: flex;
@@ -1429,6 +1441,7 @@ color: var(--main-hover);
   align-items: center;
   font-size: 36px;
   margin-inline-end: 20px;
+  flex-shrink: 0;
 }
 .feature-text p{
   color: var(--white-color);
@@ -1470,6 +1483,7 @@ footer {
 
 .nav-foot-cont {
   text-align: start;
+  margin-inline-start: 55px;
 }
 .nav-foot-header {
   text-transform: capitalize;
@@ -1479,13 +1493,14 @@ footer {
   margin-bottom: 20px;
   text-align: start;
  font-family: "Cairo-Bold";
+
 }
 @media (min-width: 991px) {
 
   .nav-wrap {
     display: flex;
     flex-direction: column;
-    max-height: 140px;
+    max-height: 200px;
     flex-wrap: wrap;
   }
 
@@ -1497,7 +1512,7 @@ footer {
 .nav-foot-link {
   color: #808080;
   font-size: 14px;
- 
+ white-space: nowrap;
   display: inline-flex;
   text-decoration: none !important;
   transition: all 0.3s ease-in-out;
@@ -1702,6 +1717,7 @@ html[dir="rtl"] .footer-accordion.active:after {
   .nav-foot-cont {
     text-align: start;
     margin-bottom: 20px;
+    margin-inline-start: 0;
   }
   .nav-foot-header {
     text-align: center;
@@ -1758,6 +1774,7 @@ html[dir="rtl"] .footer-accordion.active:after {
     width: 100%;
     justify-content: space-between;
     position: relative;
+    flex-wrap: wrap;
   }
   .show-icons, .header-icons .add-to{
     margin-inline-end: 0;
@@ -1776,6 +1793,7 @@ html[dir="rtl"] .footer-accordion.active:after {
     margin-inline-start: 15px;
     transition: all 0.3s ease-in-out;
     z-index: 9;
+    color: #000;
   }
   .cat-anchor span{
     font-size: 14px;
@@ -1805,9 +1823,7 @@ html[dir="rtl"] .footer-accordion.active:after {
   .category-link.active:after{
 transform: rotate(-180deg);
   }
-  .menu-bars:hover {
-    color: var(--main-color);
-  }
+ 
   .show-icons .lang-section {
     display: none;
   }
@@ -2002,7 +2018,7 @@ transform: rotate(-180deg);
   display: block;
   height: 2px;
   width: 100%;
-  background: var(--main-color);
+  background: #000;
 }
 
 .hamburger-lines .line1 {
@@ -2018,16 +2034,11 @@ transform: rotate(-180deg);
   transform-origin: 0% 100%;
   transition: transform 0.4s ease-in-out;
 }
-
-.open-bars .hamburger-lines .line1 {
-  transform: rotate(45deg);
+.show{
+  display: block;
 }
-.open-bars .hamburger-lines .line2 {
-  transform: scaleY(0);
-}
-
-.open-bars .hamburger-lines .line3 {
-  transform: rotate(-45deg);
+.hide{
+  display: none;
 }
 @media (max-width: 1188px) {
 
@@ -2046,15 +2057,48 @@ transform: rotate(-180deg);
 }
 
 @media (max-width: 991px) {
-
+.category-block{
+  height: 150px;
+}
+.category-link-2{
+  font-size: 13px;
+}
+.category-figure{
+  padding: 5px;
+}
   .cart-list{
     position: absolute;
-    inset-inline-end: 66px ;
+    inset-inline-end: 30px ;
+    top:19px;
+  }
+  .add-cart{
+    width: 100%;
+  }
+  .feature-block{
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .feature-text p{
+    text-align: center;
+  }
+  .feature-text span{
+    text-align: center;
+    height: 50px;
+  }
+  .feature-text{
+    width: 100%;
+  }
+  .navgition .container{
+    padding: 0;
+  }
+  .category-link:after{
+    inset-inline-end: 0;
   }
 .features-blocks{
   justify-content: center;
   display: grid;
-  gap: 20px;
+  gap: 15px;
+  grid-template-columns: repeat(2,1fr);
 }
   .fixed-search{
     display: flex;
@@ -2077,14 +2121,11 @@ transform: rotate(-180deg);
   }
   
   .search-section {
-    margin: 0;
-    position: absolute;
-    top: -100px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 80%;
-    z-index: 99;
-    transition: all 0.3s ease-in-out;
+    position: relative;
+    order:3;
+    margin-inline-start: 0;
+    width: 100%;
+    margin-top: 12px;
   }
   .search-input:focus {
     border-color: var(--main-hover);
@@ -2100,6 +2141,9 @@ transform: rotate(-180deg);
   }
 }
 @media (min-width: 992px) and (max-width: 1199px) {
+  .nav-foot-cont{
+    margin-inline-start: 20px;
+  }
   .search-section{
     width: 450px;
   }
@@ -2130,8 +2174,9 @@ transform: rotate(-180deg);
     grid-template-columns: repeat(2,1fr);
     gap:25px;
   }
- 
- 
+  .category-block{
+    height: 200px;
+  }
  
 
 
