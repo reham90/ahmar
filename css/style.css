@@ -2074,6 +2074,9 @@ transform: rotate(-180deg);
     inset-inline-end: 30px ;
     top:19px;
   }
+  html[dir="ltr"] .cart-list{
+    top:15px;
+  }
   .add-cart{
     width: 100%;
     font-size: 12px;
