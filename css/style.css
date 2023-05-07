@@ -732,7 +732,9 @@ html[dir="rtl"] .open-search {
   font-size: 24px;
   transition: 0.5s;
 }
-
+.fixed-nav .cart-list{
+  top:15px;
+}
 .cart-list li button i:hover{
   color: var(--main-hover);
 }
@@ -2061,22 +2063,21 @@ transform: rotate(-180deg);
 
 @media (max-width: 991px) {
 .category-block{
-  height: 150px;
+  height: auto;
 }
 .category-link-2{
   font-size: 13px;
 }
 .category-figure{
   padding: 5px;
+  height: 100px;
 }
   .cart-list{
     position: absolute;
     inset-inline-end: 30px ;
     top:19px;
   }
-  html[dir="ltr"] .cart-list{
-    top:15px;
-  }
+ 
   .add-cart{
     width: 100%;
     font-size: 12px;
@@ -2194,7 +2195,9 @@ transform: rotate(-180deg);
   .category-block{
     height: 200px;
   }
- 
+  .category-figure{
+    height: auto;
+  }
 
 
  
