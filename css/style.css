@@ -2088,6 +2088,8 @@ transform: rotate(-180deg);
   .feature-block{
     justify-content: center;
     flex-wrap: wrap;
+   flex-direction: column;
+   align-self: self-start;
   }
   .feature-text p{
     text-align: center;
