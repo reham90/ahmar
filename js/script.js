@@ -46,7 +46,17 @@ $(document).ready(function () {
       $(this).toggleClass("active");
       $(".menu-name").not(this).removeClass("active");
     }
-  });}
+  });
+  $(".slide-menu-2").click(function (e) {
+    e.preventDefault();
+    $(this).siblings(".cats-dispaly-3").slideToggle(400);
+    $(".slide-menu-2").not(this).siblings(".cats-dispaly-3").slideUp(400);
+    if ($(window).width() <= 991) {
+      $(this).toggleClass("active");
+      $(".slide-menu-2").not(this).removeClass("active");
+    }
+  });
+}
 
   //fixed nav
   $stickyNav = $(".top-header");
